@@ -51,7 +51,6 @@ def run_dijkstra(nodes, edges):
     distances[(start_x, start_y, 'RIGHT')] = 0
 
     visited = set()
-    i = 0
     while queue:
         dist,cur = heapq.heappop(queue)
         x,y,direction = cur
@@ -65,7 +64,6 @@ def run_dijkstra(nodes, edges):
             else:
                 distances[neighbor] = min(1 + dist, distances[neighbor])
             heapq.heappush(queue, (distances[neighbor], neighbor))
-        i += 1
     return distances
 
 
